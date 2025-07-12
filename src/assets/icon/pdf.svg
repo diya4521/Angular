@@ -1,0 +1,15 @@
+<svg width="75" height="100" viewBox="0 0 75 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- File Background -->
+  <rect x="5" y="5" width="65" height="90" rx="5" ry="5" fill="#DCE1E6" stroke="#B0B0B0" stroke-width="1"></rect>
+  
+  <!-- File Fold -->
+  <polygon points="45,5 70,30 45,30" fill="#C0C7CD"></polygon>
+  
+  <!-- PDF Label Background (Red) -->
+  <rect x="10" y="65" width="55" height="25" rx="5" ry="5" fill="#FF0000"></rect>
+  
+  <!-- PDF Text -->
+  <text x="37.5" y="83" font-family="Arial" font-size="14" fill="white" text-anchor="middle" font-weight="bold">
+    PDF
+  </text>
+</svg>

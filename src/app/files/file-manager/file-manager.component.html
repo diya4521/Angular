@@ -1,0 +1,30 @@
+<!---Header-->
+<app-header></app-header>
+
+
+<div class="container">
+    <!-- Folders -->
+    <h4 class="mx-1 my-4">Folders</h4>
+
+    <div class="folder-grid">
+        <app-folder-card name="Personal" [fileCount]="57"></app-folder-card>
+        <app-folder-card name="Photos" [fileCount]="907"></app-folder-card>
+        <app-folder-card name="Work" [fileCount]="24"></app-folder-card>
+    </div>
+
+    <!-- Files -->
+
+    <h4 class="mx-1 my-5"> Files</h4>
+
+    <div class="file-grid">
+        @for (item of FilesData; track $index) {
+        <app-file-card [name]="item[1]" [type]="item[0]"></app-file-card>
+        }
+    </div>
+
+
+    <!-- top button -->
+    @if (showTopButton) {
+    <button class="top-btn" data-bs-toggle="tooltip" title="Upload File" (click)="scrollToTop()">+</button>
+    }
+</div>

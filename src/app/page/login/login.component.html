@@ -1,0 +1,54 @@
+<div class="auth-bg d-flex justify-content-center align-items-center vh-100">
+    <div class="glass rounded-5 shadow-lg p-5">
+        <ul class="nav nav-pills nav-fill mb-4">
+            <li class="nav-item">
+                <button class="nav-link active text-dark" data-bs-toggle="pill"
+                    data-bs-target="#login-tab-pane">Login</button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link text-dark" data-bs-toggle="pill"
+                    data-bs-target="#register-tab-pane">Register</button>
+            </li>
+        </ul>
+
+        <div class="tab-content" id="pills-tabContent">
+            <!-- Login Form -->
+            <div class="tab-pane fade show active" id="login-tab-pane">
+                <form>
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control rounded-pill" placeholder="Email">
+                        <label> Email address</label>
+                    </div>
+                    <div class="form-floating mb-4">
+                        <input type="password" class="form-control rounded-pill" placeholder="Password">
+                        <label>Password</label>
+                    </div>
+                    <div class="d-grid">
+                        <a class="btn btn-gradient rounded-pill" routerLink="/file">Login</a>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Register Form -->  
+            <div class="tab-pane fade" id="register-tab-pane">
+                <form>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control rounded-pill" placeholder="Full Name">
+                        <label>Full Name</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control rounded-pill" placeholder="Email">
+                        <label>Email address</label>
+                    </div>
+                    <div class="form-floating mb-4">
+                        <input type="password" class="form-control rounded-pill" placeholder="Password">
+                        <label> Password</label>
+                    </div>
+                    <div class="d-grid">
+                        <button class="btn btn-gradient rounded-pill">Register</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+.folder-grid,
+.file-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 16px;
+  padding: 20px;
+}
+
+.top-btn {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  background: #ffd6ba;
+  color: #000;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 15px;
+  font-size: 14px;
+  cursor: pointer;
+  z-index: 999;
+  box-shadow: 0 0 0 0.2rem rgb(255, 182, 155);
+  transition: all 0.3s ease;
+}
+.top-btn:hover {
+  box-shadow: 0 0 0 0.2rem rgba(255, 182, 155, 0.534);
+  background: #ffe8cd;
+}
