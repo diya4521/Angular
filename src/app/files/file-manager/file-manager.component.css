@@ -25,3 +25,36 @@
   box-shadow: 0 0 0 0.2rem rgba(255, 182, 155, 0.534);
   background: #ffe8cd;
 }
+
+.box {
+  background-color: #ffdcdc52;
+  height: 250px;
+}
+
+img {
+  height: 100px;
+  width: 100px;
+}
+
+hr {
+  color: #7e8b9f;
+}
+
+.btn-rounded {
+  border-radius: 50px;
+  padding: 8px 24px;
+  font-weight: 600;
+}
+.btn-color {
+  background: #ffd6ba;
+}
+.btn-color:hover {
+  background: #ffe8cd;
+}
+
+.btn-colorA {
+  border: 3px solid #ffe8cd;
+}
+.btn-colorA:hover {
+  background: #ffe8cd;
+}

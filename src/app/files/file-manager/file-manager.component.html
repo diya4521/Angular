@@ -18,13 +18,62 @@
 
     <div class="file-grid">
         @for (item of FilesData; track $index) {
-        <app-file-card [name]="item[1]" [type]="item[0]"></app-file-card>
+        <app-file-card data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"
+            [name]="item[1]" [type]="item[0]"></app-file-card>
         }
+    </div>
+
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+            <h5 id="offcanvasRightLabel"></h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <!-- ========== Start Section ========== -->
+            <div class="box d-flex justify-content-center align-items-center rounded ">
+                <img src="assets/img/wic_2709.svg" alt="">
+            </div>
+
+            <h4>Biometric portrait</h4>
+            <span class="badge bg-warning text-dark">JPG</span>
+
+            <h5 class="mt-4 mb-3">Information</h5>
+            <hr>
+            <div class="mb-2">
+                <strong>Created By</strong> <span class="float-end">Brian Hughes</span>
+            </div>
+            <hr>
+            <div class="mb-2">
+                <strong>Created At</strong> <span class="float-end">August 29, 2020</span>
+            </div>
+            <hr>
+            <div class="mb-2">
+                <strong>Modified At</strong> <span class="float-end">August 29, 2020</span>
+            </div>
+            <hr>
+            <div class="mb-2">
+                <strong>Size</strong> <span class="float-end">4.5 MB</span>
+            </div>
+            <hr>
+
+            <div class="mt-5">
+                <strong>Description</strong> <span class="float-end"></span>
+            </div>
+            <hr>
+            <strong><em>Click here to add a description</em></strong>
+
+            <div class="mt-4 d-flex  justify-content-between align-items-center">
+                <button class="btn btn-color btn-rounded">Download</button>
+                <button class="btn btn-colorA btn-rounded">Delete</button>
+            </div>
+            <!-- ========== End Section ========== -->
+
+        </div>
     </div>
 
 
     <!-- top button -->
     @if (showTopButton) {
-    <button class="top-btn" data-bs-toggle="tooltip" title="Upload File" (click)="scrollToTop()">+</button>
+    <button class="top-btn" data-bs-toggle="tooltip" title="Upload File" (click)="scrollToTop()">+ Upload File</button>
     }
 </div>
