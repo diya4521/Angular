@@ -19,7 +19,7 @@
     <div class="file-grid">
         @for (item of FilesData; track $index) {
         <app-file-card data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"
-            [name]="item[1]" [type]="item[0]"></app-file-card>
+            [name]="item[1]" [type]="item[0]" (click)="openSidebar(item)"></app-file-card>
         }
     </div>
 
@@ -31,11 +31,11 @@
         <div class="offcanvas-body">
             <!-- ========== Start Section ========== -->
             <div class="box d-flex justify-content-center align-items-center rounded ">
-                <img src="assets/img/wic_2709.svg" alt="">
+                <img src="assets/icon/{{type}}" alt="">
             </div>
 
-            <h4>Biometric portrait</h4>
-            <span class="badge bg-warning text-dark">JPG</span>
+            <h4>{{name}}</h4>
+
 
             <h5 class="mt-4 mb-3">Information</h5>
             <hr>

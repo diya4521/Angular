@@ -11,6 +11,8 @@ import { FileCardComponent } from '../../com/file-card/file-card.component';
 })
 export class FileManagerComponent {
   showTopButton = true;
+  name = '';
+  type = '';
 
   FilesData = [
     ['jpg.svg', ' Biometric portrait '],
@@ -27,6 +29,11 @@ export class FileManagerComponent {
     ['xls.svg', ' Summer budget '],
     ['txt.svg', ' System logs '],
   ];
+
+  openSidebar(item: string[]) {
+    this.type = item[0];
+    this.name = item[1];
+  }
 
   @HostListener('window:scroll', [])
   onScroll() {}
