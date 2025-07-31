@@ -7,11 +7,13 @@
     <h4 class="mx-1 my-4">Folders</h4>
 
     <div class="folder-grid">
-        <app-folder-card name="Personal" [fileCount]="57"></app-folder-card>
-        <app-folder-card name="Photos" [fileCount]="907"></app-folder-card>
-        <app-folder-card name="Work" [fileCount]="24"></app-folder-card>
-    </div>
+        @for (item of CategoryData; track $index) {
 
+        <app-folder-card name={{item[0]}} [fileCount]="parseInt(item[2].toString())"></app-folder-card>
+        }
+
+
+    </div>
     <!-- Files -->
 
     <h4 class="mx-1 my-5"> Files</h4>
@@ -74,6 +76,31 @@
 
     <!-- top button -->
     @if (showTopButton) {
-    <button class="top-btn" data-bs-toggle="tooltip" title="Upload File" (click)="scrollToTop()">+ Upload File</button>
+    <button class="top-btn" data-bs-toggle="modal" data-bs-target="#uploadFileModal">+ Upload File</button>
     }
 </div>
+
+<div class="modal fade" id="uploadFileModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Add File</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+                <label>Title</label>
+                <input class="form-control" type="text">
+
+                <label class="mt-2">File</label>
+                <input class="form-control" type="file">
+
+                <div class="text-end mt-2">
+                    <button type="button" class="btn btn-color" data-bs-dismiss="modal">Add</button>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>

@@ -15,21 +15,36 @@ export class FileManagerComponent {
   type = '';
 
   FilesData = [
-    ['jpg.svg', ' Biometric portrait '],
-    ['pdf.svg', ' Contract #123 '],
-    ['txt.svg', ' Crash logo'],
-    ['doc.svg', ' DMCA notice #42'],
-    ['xls.svg', ' Estimated budget'],
-    ['pdf.svg', ' Invoices '],
-    ['doc.svg', ' Personal projects '],
-    ['doc.svg', ' Prices '],
-    ['jpg.svg', ' Scanned image 20201012-1 '],
-    ['jpg.svg', ' Scanned image 20201012-2 '],
-    ['doc.svg', ' Shopping list '],
-    ['xls.svg', ' Summer budget '],
-    ['txt.svg', ' System logs '],
+    ['jpg.svg', ' Biometric portrait', 'Images'],
+    ['pdf.svg', ' Contract #123 ', 'Documents'],
+    ['txt.svg', ' Crash logo', 'Documents'],
+    ['doc.svg', ' DMCA notice #42', 'Documents'],
+    ['xls.svg', ' Estimated budget', 'Documents'],
+    ['pdf.svg', ' Invoices ', 'Documents'],
+    ['doc.svg', ' Personal projects ', 'Documents'],
+    ['doc.svg', ' Prices ', 'Documents'],
+    ['jpg.svg', ' Scanned image 20201012-1 ', 'Images'],
+    ['jpg.svg', ' Scanned image 20201012-2 ', 'Images'],
+    ['doc.svg', ' Shopping list ', 'Documents'],
+    ['xls.svg', ' Summer budget ', 'Documents'],
+    ['txt.svg', ' System logs ', 'Documents'],
   ];
 
+  CategoryData = [
+    [
+      'Images',
+      'folder.svg',
+      this.FilesData.filter((t) => t[2] == 'Images').length,
+    ],
+    [
+      'Documents',
+      'folder.svg',
+      this.FilesData.filter((t) => t[2] == 'Documents').length,
+    ],
+  ];
+  parseInt(value: string): number {
+    return parseInt(value, 10);
+  }
   openSidebar(item: string[]) {
     this.type = item[0];
     this.name = item[1];
@@ -37,8 +52,4 @@ export class FileManagerComponent {
 
   @HostListener('window:scroll', [])
   onScroll() {}
-
-  scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
 }
