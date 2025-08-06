@@ -30,6 +30,31 @@ export class FileManagerComponent {
     ['txt.svg', ' System logs ', 'Documents'],
   ];
 
+  AllFilesData = [
+    ['jpg.svg', ' Biometric portrait', 'Images', 'All'],
+    ['pdf.svg', ' Contract #123 ', 'Documents'],
+    ['txt.svg', ' Crash logo', 'Documents'],
+    ['doc.svg', ' DMCA notice #42', 'Documents'],
+    ['xls.svg', ' Estimated budget', 'Documents'],
+    ['pdf.svg', ' Invoices ', 'Documents'],
+    ['doc.svg', ' Personal projects ', 'Documents'],
+    ['doc.svg', ' Prices ', 'Documents'],
+    ['jpg.svg', ' Scanned image 20201012-1 ', 'Images'],
+    ['jpg.svg', ' Scanned image 20201012-2 ', 'Images'],
+    ['doc.svg', ' Shopping list ', 'Documents'],
+    ['xls.svg', ' Summer budget ', 'Documents'],
+    ['txt.svg', ' System logs ', 'Documents'],
+  ];
+
+  filterData(name: any) {
+    if (name == 'All') {
+      this.FilesData = this.AllFilesData;
+    } else {
+      var Data = this.AllFilesData.filter((t) => t[2] == name);
+      this.FilesData = Data;
+    }
+  }
+
   CategoryData = [
     [
       'Images',

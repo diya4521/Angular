@@ -7,9 +7,11 @@
     <h4 class="mx-1 my-4">Folders</h4>
 
     <div class="folder-grid">
+        <app-folder-card (click)="filterData('All')" name="All"></app-folder-card>
         @for (item of CategoryData; track $index) {
-
-        <app-folder-card name={{item[0]}} [fileCount]="parseInt(item[2].toString())"></app-folder-card>
+        <span (click)="filterData(item[0])">
+            <app-folder-card name={{item[0]}} [fileCount]="parseInt(item[2].toString())"></app-folder-card>
+        </span>
         }
 
 
