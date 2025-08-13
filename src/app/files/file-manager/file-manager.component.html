@@ -91,18 +91,17 @@
             </div>
 
             <div class="modal-body">
-                <label>Title</label>
-                <input class="form-control" type="text">
+                <form #addFileForm="ngForm" enctype="multipart/form-data" (ngSubmit)="addFile(addFileForm)">
+                    <label>Title</label>
+                    <input class="form-control" ngModel name="title" type="text">
 
-                <label class="mt-2">File</label>
-                <input class="form-control" type="file">
+                    <label class="mt-2">File</label>
+                    <input class="form-control" ngModel name="file" type="file">
 
-                <div class="text-end mt-2">
-                    <button type="button" class="btn btn-color" data-bs-dismiss="modal">Add</button>
-                </div>
+                    <div class="text-end mt-2">
+                        <button type="submit" class="btn btn-color" data-bs-dismiss="modal">Add</button>
+                    </div>
+                </form>
             </div>
-
-
-
         </div>
     </div>

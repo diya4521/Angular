@@ -2,10 +2,16 @@ import { Component, HostListener } from '@angular/core';
 import { HeaderComponent } from '../../com/header/header.component';
 import { FolderCardComponent } from '../../com/folder-card/folder-card.component';
 import { FileCardComponent } from '../../com/file-card/file-card.component';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-file-manager',
-  imports: [HeaderComponent, FolderCardComponent, FileCardComponent],
+  imports: [
+    HeaderComponent,
+    FolderCardComponent,
+    FileCardComponent,
+    FormsModule,
+  ],
   templateUrl: './file-manager.component.html',
   styleUrl: './file-manager.component.css',
 })
@@ -73,6 +79,31 @@ export class FileManagerComponent {
   openSidebar(item: string[]) {
     this.type = item[0];
     this.name = item[1];
+  }
+
+  addFile(form: any) {
+    var fle: string = form.value.file;
+    var title = form.value.title;
+    var ext = fle.split('.')[1];
+
+    if (ext == 'jpg') {
+      data = ['jpg.svg', title, 'Images'];
+    } else if (ext == 'pdf') {
+      data = ['pdf.svg', title, 'Documents'];
+    } else if (ext == 'txt') {
+      data = ['txt.svg', title, 'Documents'];
+    } else if (ext == 'doc') {
+      data = ['doc.svg', title, 'Documents'];
+    } else if (ext == 'xls') {
+      data = ['xls.svg', title, 'Documents'];
+    } else {
+      data = ['default.svg', title, ''];
+    }
+
+    var data = ['jpg.svg', title, 'Images'];
+    this.AllFilesData.push(data);
+    this.FilesData = this.AllFilesData;
+    //png
   }
 
   @HostListener('window:scroll', [])
