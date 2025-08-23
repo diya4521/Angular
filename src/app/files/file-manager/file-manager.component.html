@@ -23,7 +23,7 @@
     <div class="file-grid">
         @for (item of FilesData; track $index) {
         <app-file-card data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"
-            [name]="item[1]" [type]="item[0]" (click)="openSidebar(item)"></app-file-card>
+            [name]="item[1]" [type]="item[0]" (click)="openSidebar(item,$index)"></app-file-card>
         }
     </div>
 
@@ -68,7 +68,8 @@
 
             <div class="mt-4 d-flex  justify-content-between align-items-center">
                 <button class="btn btn-color btn-rounded">Download</button>
-                <button class="btn btn-colorA btn-rounded">Delete</button>
+                <button type="button" data-bs-dismiss="offcanvas" class="btn btn-colorA btn-rounded"
+                    (click)="deleteData()">Delete</button>
             </div>
             <!-- ========== End Section ========== -->
 

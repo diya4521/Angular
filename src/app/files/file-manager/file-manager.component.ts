@@ -19,6 +19,7 @@ export class FileManagerComponent {
   showTopButton = true;
   name = '';
   type = '';
+  findex = -1;
 
   FilesData = [
     ['jpg.svg', ' Biometric portrait', 'Images'],
@@ -76,7 +77,8 @@ export class FileManagerComponent {
   parseInt(value: string): number {
     return parseInt(value, 10);
   }
-  openSidebar(item: string[]) {
+  openSidebar(item: string[], index: any) {
+    this.findex = index;
     this.type = item[0];
     this.name = item[1];
   }
@@ -85,7 +87,8 @@ export class FileManagerComponent {
     var fle: string = form.value.file;
     var title = form.value.title;
     var ext = fle.split('.')[1];
-
+    // alert(ext);
+    var data = [];
     if (ext == 'jpg') {
       data = ['jpg.svg', title, 'Images'];
     } else if (ext == 'pdf') {
@@ -94,17 +97,26 @@ export class FileManagerComponent {
       data = ['txt.svg', title, 'Documents'];
     } else if (ext == 'doc') {
       data = ['doc.svg', title, 'Documents'];
+    } else if (ext == 'docx') {
+      data = ['doc.svg', title, 'Documents'];
     } else if (ext == 'xls') {
       data = ['xls.svg', title, 'Documents'];
     } else {
       data = ['default.svg', title, ''];
     }
 
-    var data = ['jpg.svg', title, 'Images'];
+    // var data = ['jpg.svg', title, 'Images'];
     this.AllFilesData.push(data);
     this.FilesData = this.AllFilesData;
     //png
   }
+
+  deleteData() {
+    // alert(this.findex);
+    this.AllFilesData.splice(this.findex, 1);
+    this.FilesData = this.AllFilesData;
+    console.log(this.AllFilesData);
+  } 
 
   @HostListener('window:scroll', [])
   onScroll() {}
