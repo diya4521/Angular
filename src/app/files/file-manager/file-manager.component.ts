@@ -74,6 +74,22 @@ export class FileManagerComponent {
       this.FilesData.filter((t) => t[2] == 'Documents').length,
     ],
   ];
+
+  updateCategoryData() {
+    this.CategoryData = [
+      [
+        'Images',
+        'folder.svg',
+        this.AllFilesData.filter((t) => t[2] == 'Images').length,
+      ],
+      [
+        'Documents',
+        'folder.svg',
+        this.AllFilesData.filter((t) => t[2] == 'Documents').length,
+      ],
+    ];
+  }
+
   parseInt(value: string): number {
     return parseInt(value, 10);
   }
@@ -109,6 +125,8 @@ export class FileManagerComponent {
     this.AllFilesData.push(data);
     this.FilesData = this.AllFilesData;
     //png
+
+    this.updateCategoryData();
   }
 
   deleteData() {
@@ -116,7 +134,9 @@ export class FileManagerComponent {
     this.AllFilesData.splice(this.findex, 1);
     this.FilesData = this.AllFilesData;
     console.log(this.AllFilesData);
-  } 
+
+    this.updateCategoryData();
+  }
 
   @HostListener('window:scroll', [])
   onScroll() {}
