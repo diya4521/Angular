@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { HeaderComponent } from '../../com/header/header.component';
 import { FolderCardComponent } from '../../com/folder-card/folder-card.component';
 import { FileCardComponent } from '../../com/file-card/file-card.component';
@@ -15,11 +15,16 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './file-manager.component.html',
   styleUrl: './file-manager.component.css',
 })
-export class FileManagerComponent {
+export class FileManagerComponent implements OnInit {
+  ngOnInit(): void {
+    this.updateCategoryData;
+  }
+
   showTopButton = true;
   name = '';
   type = '';
   findex = -1;
+  CategoryData: any = [];
 
   FilesData = [
     ['jpg.svg', ' Biometric portrait', 'Images'],
@@ -62,18 +67,18 @@ export class FileManagerComponent {
     }
   }
 
-  CategoryData = [
-    [
-      'Images',
-      'folder.svg',
-      this.FilesData.filter((t) => t[2] == 'Images').length,
-    ],
-    [
-      'Documents',
-      'folder.svg',
-      this.FilesData.filter((t) => t[2] == 'Documents').length,
-    ],
-  ];
+  // CategoryData = [
+  //   [
+  //     'Images',
+  //     'folder.svg',
+  //     this.FilesData.filter((t) => t[2] == 'Images').length,
+  //   ],
+  //   [
+  //     'Documents',
+  //     'folder.svg',
+  //     this.FilesData.filter((t) => t[2] == 'Documents').length,
+  //   ],
+  // ];
 
   updateCategoryData() {
     this.CategoryData = [
