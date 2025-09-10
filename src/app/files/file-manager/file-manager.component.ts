@@ -17,7 +17,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class FileManagerComponent implements OnInit {
   ngOnInit(): void {
-    this.updateCategoryData;
+    this.updateCategoryData();
   }
 
   showTopButton = true;
